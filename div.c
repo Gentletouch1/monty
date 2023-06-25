@@ -18,13 +18,13 @@ void _div(stack_t **stack, unsigned int line_cnt)
 	if (!stack || !*stack || !((*stack)->next))
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_cnt);
-		status = EXIT_FAILURE;
-		return;
+		exit(EXIT_FAILURE);
 	}
 	if (((*stack)->n) == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_cnt);
-		status = EXIT_FAILURE;
+		exit(EXIT_FAILURE);
+		;
 		return;
 	}
 
@@ -32,3 +32,4 @@ void _div(stack_t **stack, unsigned int line_cnt)
 	pop(stack, line_cnt);/*For top node*/
 	(*stack)->n = result;
 }
+

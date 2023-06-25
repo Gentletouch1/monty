@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include "monty.h"
 
+/**
+ * queue_node - adds a node to a stack_t stack in queue_node
+ * @stack: stack head
+ * @n: number of the node
+ *
+ * Return: newly created node, if memory allocation fails, the function will
+ * return NULL.
+ */
 stack_t *queue_node(stack_t **stack, const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
@@ -37,7 +45,14 @@ stack_t *queue_node(stack_t **stack, const int n)
 	return (new);
 }
 
-
+/**
+ * add_node - adds a node to the start of a stack_t stack
+ * @stack: stack head
+ * @n: number for the new node
+ *
+ * Return: newly created node, if creation fails, the
+ * function will return NULL.
+ */
 stack_t *add_node(stack_t **stack, const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
@@ -80,7 +95,12 @@ size_t print_stack(const stack_t *stack)
 	return (c);
 }
 
-
+/**
+ * free_stack - frees a dlistint_t linked list
+ * @stack: list head
+ *
+ * Return: void
+ */
 void free_stack(stack_t *stack)
 {
 	stack_t *current = stack;
